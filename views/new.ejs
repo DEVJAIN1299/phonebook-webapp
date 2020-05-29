@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style >
+	.myForm {
+  min-width: 500px;
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem
+}
+@media (max-width: 500px) {
+  .myForm {
+    min-width: 90%;
+  }
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="container">
+		<h3 style="background-color: skyblue; padding: 5px">rm_Phonebook</h3>
+	</div>
+
+  <form class="myForm" method="post" action="/new/" style="border: solid; padding-left: 5px;" >
+
+<div class="container-fixed" style="margin-top: 1.5%;">
+    
+    	<a href="/">
+          <span class="glyphicon glyphicon-arrow-left" style="color: black; ">  Add new contact</span>
+      	</a>
+        
+
+    <div class="form-group" style="padding-left:  25px; padding-right: 15px;margin-top: 15px; width: 98%">
+      <label for="email">Name</label>
+      <input class="form-control input-lg" type="name" name="record[name]" id="name" placeholder="name" />
+    </div>
+
+    <div class="form-group" style="padding-left:  25px;padding-right: 15px; width: 98%">
+      <label for="date">DOB</label>
+      	<input class="form-control input-lg" type="date" name="record[DoB]" id="date" placeholder="date" />
+     </div>
+
+    <div class="form-group" style="padding-left:  25px; padding-right: 15px;" id="div1">
+  		<label for="Telephone">Mobile Number</label>
+    		<div>
+    		<input class="form-control input-lg" style="float: left; width: 90%" type="tel" name="record[phoneNo]" id="Telephone" placeholder="+91 xxxxxxxxxxx">
+    		<a href="#" ><span id="dev1" style="padding-left:3.5%;padding-top:2.2%" class="glyphicon glyphicon-plus-sign" style></span></a>
+    		</div>
+  	</div>
+
+  	<div class="form-group" style="padding-left:  25px; padding-right: 15px;" id="div2">
+      <label for="email">Email</label>
+      <div>
+      	<input class="form-control input-lg" type="email" style="float: left; width: 90%" name="record[email]" id="email" placeholder="abc@gmail.com" />
+      	<a href="#" ><span id="dev2" style="padding-left:3.5%;padding-top:2.2%" class="glyphicon glyphicon-plus-sign"></span></a>
+      </div>
+     </div>	
+     <a href="#" class="alert-link"> 
+    <button type="submit" class="btn btn-success btn-lg pull-right" style='margin-right: 10px;margin-bottom: 10px;'>Save</button>
+    </a>
+  </form>
+
+</div>
+</body>
+
+<script>
+	el = $("#dev1")
+	el.click(()=>{
+		let txt1 = '<div style="margin-top: 2%;"><input class="form-control input-lg" style="float: left; width: 90%;" type="tel" name="Telephone" id="Telephone" placeholder="+91 xxxxxxxxxxx"><span class="glyphicon glyphicon-remove-sign" id="rem" style="padding-left:3.5%;padding-top:2.2%"></div>';
+		let div = $("#div1")
+		div.append(txt1)
+		//remove()
+	})
+
+
+
+	e2 = $("#dev2")
+	e2.click(()=>{
+		let txt2 = '<div><input class="form-control input-lg" type="email" style="float: left; width: 90%" name="email" id="email" placeholder="abc@gmail.com" /><span class="glyphicon glyphicon-remove-sign" id="rem" style="padding-left:3.5%;padding-top:5%"></div>';
+		let div = $("#div2")
+		div.append(txt2)
+	})
+
+	// function remove(){
+	// 	let rem = $("#rem")
+	// 	console.log(rem)
+	// 	rem.click(()=>{
+	// 		let div = $("this").parent()
+	// 		console.log(div)
+	// 		div.remove()
+	// 	})
+	// }
+
+</script>
+</html>
